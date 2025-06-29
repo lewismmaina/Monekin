@@ -73,41 +73,42 @@ class MonekinAppEntryPoint extends StatelessWidget {
     super.key,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    Logger.printDebug('------------------ APP ENTRY POINT ------------------');
+@override
+Widget build(BuildContext context) {
+  Logger.printDebug('------------------ APP ENTRY POINT ------------------');
 
-    final lang = appStateSettings[SettingKey.appLanguage];
-
-    if (lang != null) {
-      Logger.printDebug('App language found. Setting the locale to `$lang`...');
-      LocaleSettings.setLocaleRaw(lang);
-    } else {
-      Logger.printDebug(
-          'App language not found. Setting the user device language...');
-
-      LocaleSettings.useDeviceLocale();
-
-      // We have nothing to worry here since the useDeviceLocale() func will set the default lang (english in our case) if
-      // the user is using a non-supported language in his device
-
-      UserSettingService.instance
-          .setItem(
-            SettingKey.appLanguage,
-            LocaleSettings.currentLocale.languageTag,
-          )
-          .then((value) => null);
-    }
-
-    return TranslationProvider(
-      child: MaterialAppContainer(
-        introSeen: appStateData[AppDataKey.introSeen] == '1',
-        amoledMode: appStateSettings[SettingKey.amoledMode]! == '1',
-        accentColor: appStateSettings[SettingKey.accentColor]!,
-        themeMode: getThemeFromString(appStateSettings[SettingKey.themeMode]!),
-      ),
+  final lang = appStateSettings[SettingKey.appLanguage];
+  if (lang != null) {
+    Logger.printDebug('App language found. Setting the locale to `$lang`...');
+    LocaleSettings.setLocaleRaw(lang);
+  } else {
+    Logger.printDebug('App language not found. Setting device locale...');
+    LocaleSettings.useDeviceLocale();
+    UserSettingService.instance.setItem(
+      SettingKey.appLanguage,
+      LocaleSettings.currentLocale.languageTag,
     );
   }
+
+  // Use fallback values safely
+  final accentColor = appStateSettings[SettingKey.accentColor] ?? '#2196F3';
+  final amoled = appStateSettings[SettingKey.amoledMode] == '1';
+  final theme = getThemeFromString(
+    appStateSettings[SettingKey.themeMode] ?? 'system',
+  );
+
+  final introSeen = appStateData[AppDataKey.introSeen] == '1';
+
+  return TranslationProvider(
+    child: MaterialAppContainer(
+      introSeen: introSeen,
+      amoledMode: amoled,
+      accentColor: accentColor,
+      themeMode: theme,
+    ),
+  );
+}
+
 }
 
 class MaterialAppContainer extends StatelessWidget {

@@ -20,6 +20,14 @@
             "deviceId": "emulator-5554",
             "program" : "lib/main.dart"
         },
+                {
+            "name": "Monekin (Debug)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "deviceId": "emulator-5554",
+            "program" : "lib/main.dart"
+        },
         {
             "name": "Monekin (release mode)",
             "request": "launch",
