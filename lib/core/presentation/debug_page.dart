@@ -105,10 +105,9 @@ class DebugPage extends StatelessWidget {
               },
             ),
             Column(
-              spacing: 12,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -118,7 +117,7 @@ class DebugPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -133,7 +132,7 @@ class DebugPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -154,10 +153,9 @@ class DebugPage extends StatelessWidget {
             const Text('App custom colors:', style: sectionStyle),
             const SizedBox(height: 4),
             Column(
-              spacing: 12,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -172,7 +170,7 @@ class DebugPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -187,7 +185,7 @@ class DebugPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(
@@ -197,7 +195,7 @@ class DebugPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                Wrap(
                   spacing: 8,
                   children: [
                     _ColorPreviewTile(

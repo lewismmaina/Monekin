@@ -50,8 +50,7 @@ class TappableTextEntry extends StatelessWidget {
               : (textStyle.color ?? Theme.of(context).colorScheme.onSurface),
         ),
         duration: const Duration(milliseconds: 200),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Wrap(
           spacing: 12 + (textStyle.fontSize ?? 14) * 0.2,
           children: [
             Text(

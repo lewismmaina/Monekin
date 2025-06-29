@@ -425,7 +425,6 @@ class _DashboardPageState extends State<DashboardPage> {
         crossAxisAlignment: _isIncomeExpenseAtSameLevel(context)
             ? CrossAxisAlignment.start
             : CrossAxisAlignment.center,
-        spacing: 2,
         children: [
           Text(
             t.home.total_balance,

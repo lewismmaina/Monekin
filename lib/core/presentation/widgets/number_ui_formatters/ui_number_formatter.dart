@@ -75,14 +75,14 @@ class UINumberFormatter {
       compactView == true && amountToConvert.abs() >= _compactLimit;
 
   String get _currencySymbolWithoutDecimalSep =>
-      currency!.symbol.replaceAll(currentDecimalSep, '');
+      currency!.symbol.replaceAll(currentDecimalSep!, '');
 
   String _getFormattedAmount() {
     String formattedAmount;
 
     switch (mode) {
       case UINumberFormatterMode.currency:
-        formattedAmount = _getFormattedCurrencyAmount(currentDecimalSep);
+        formattedAmount = _getFormattedCurrencyAmount(currentDecimalSep!);
         break;
       case UINumberFormatterMode.percentage:
         formattedAmount = NumberFormat.decimalPercentPattern(
@@ -157,7 +157,7 @@ class UINumberFormatter {
   }) {
     final decimalSep = currentDecimalSep;
 
-    List<String> parts = number.split(decimalSep);
+    List<String> parts = number.split(decimalSep!);
 
     final computedDecimalStyles = decimalsStyle ??
         integerStyle.copyWith(

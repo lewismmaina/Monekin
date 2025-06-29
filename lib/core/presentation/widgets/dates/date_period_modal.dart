@@ -157,7 +157,6 @@ class _DatePeriodModalState extends State<DatePeriodModal> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 4,
           children: [
             createDateSelectorRow(
               context,

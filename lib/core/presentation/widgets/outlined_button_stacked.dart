@@ -48,6 +48,7 @@ class OutlinedButtonStacked extends StatelessWidget {
         filled: filled,
         borderRadius: borderRadius,
         borderColor: color,
+        enabled: true,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -136,9 +137,7 @@ class _OutlinedContainer extends StatelessWidget {
     required this.child,
     this.filled = false,
     this.borderRadius = 15,
-    this.borderColor,
-    this.enabled = true,
-    super.key,
+    this.borderColor, this.enabled = false,
   });
 
   final Widget child;

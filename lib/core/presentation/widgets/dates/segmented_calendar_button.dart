@@ -182,8 +182,7 @@ class _SegmentedCalendarButtonState extends State<SegmentedCalendarButton> {
                   minimumSize: const Size.fromHeight(0),
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Wrap(
                   spacing: 2,
                   children: [
                     Text(

@@ -37,7 +37,7 @@ class SelectItem<T> {
 }
 
 class _AdvancedSettingsPageState extends State<AdvancedSettingsPage> {
-  late GlobalKey<MonekinDropdownSelectState>? _themeDropdownKey = GlobalKey();
+  late final GlobalKey<MonekinDropdownSelectState> _themeDropdownKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,7 @@ class _AdvancedSettingsPageState extends State<AdvancedSettingsPage> {
                     ],
                   ),
                   onTap: () {
-                    _themeDropdownKey!.currentState!.openDropdown();
+                    _themeDropdownKey.currentState!.openDropdown();
                   },
                   leading: ScaledAnimatedSwitcher(
                     keyToWatch: theme.icon(context).toString(),

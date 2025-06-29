@@ -146,8 +146,8 @@ class MonekinDropdownSelectState<T> extends State<MonekinDropdownSelect<T>> {
                 value: value,
                 child: ConstrainedBox(
                   constraints: widget.textConstraints,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Wrap(
+                    alignment: WrapAlignment.spaceBetween,
                     spacing: 12,
                     children: [
                       Text(
